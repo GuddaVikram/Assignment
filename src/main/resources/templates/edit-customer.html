@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Customer</title>
+</head>
+<body>
+<h1>Edit Customer</h1>
+<form th:action="@{/assignment/customer/update/{authToken}(authToken = ${authToken})}" method="post" th:object="${customer}">
+    <input type="hidden" th:field="*{uuid}" />
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" th:field="*{firstName}" />
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" th:field="*{lastName}" />
+    </div>
+    <div>
+        <label for="street">Street:</label>
+        <input type="text" id="street" th:field="*{street}" />
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" th:field="*{address}" />
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" th:field="*{city}" />
+    </div>
+    <div>
+        <label for="state">State:</label>
+        <input type="text" id="state" th:field="*{state}" />
+    </div>
+    <div>
+        <label for="email">email:</label>
+        <input type="text" id="email" th:field="*{email}" />
+    </div>
+    <div>
+        <label for="phone">phone:</label>
+        <input type="text" id="phone" th:field="*{phone}" />
+    </div>
+
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+</body>
+</html>
